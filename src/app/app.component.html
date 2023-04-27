@@ -1,0 +1,12 @@
+<div class="main">
+    <h1>TODOapp F. WEB</h1>
+    <h1>Anna Bovo - 216898</h1>
+    <h1>Edu Timm - 211861 </h1>
+    <input class="lg-text-input" #campoNovoItem (keyup.enter)="CREATE_tarefa(campoNovoItem.value)"/>
+    <button class="btn-primary" (click)="CREATE_tarefa(campoNovoItem.value)">Adicionar Tarefa</button>
+    <ul>
+    <li *ngFor="let tarefaDoLoop of arrayDeTarefas">
+    <app-item [tarefa]="tarefaDoLoop" (removeTarefa)="DELETE_tarefas(tarefaDoLoop)"(modificaTarefa)="UPDATE_tarefa(tarefaDoLoop)"></app-item>
+    </li>
+    </ul>
+   </div>
